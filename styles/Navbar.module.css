@@ -1,0 +1,14 @@
+.navbar {
+  width: 100%;
+  height: 8vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--main);
+  border-bottom: 1px solid black;
+}
+
+.left {
+  color: var(--secondary);
+  padding-left: 1rem;
+}

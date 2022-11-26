@@ -1,6 +1,8 @@
 .dark {
-  --main: #000;
+  --main: #2d2d2d;
   --secondary: #fff;
+  --tertiary: #ff8c00;
+  --main-light: #292929;
 }
 
 .light {
