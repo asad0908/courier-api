@@ -1,0 +1,9 @@
+.dark {
+  --main: #000;
+  --secondary: #fff;
+}
+
+.light {
+  --main: #fff;
+  --secondary: #000;
+}
