@@ -22,4 +22,48 @@
   font-weight: bold;
   cursor: pointer;
   border: 0;
+  transition: all 0.2s ease-in;
+}
+
+.sidebarLists {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+
+.itemlistElement {
+  width: 100%;
+  height: 3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--secondary);
+}
+
+.itemListLeft {
+  margin-left: 0.5rem;
+}
+
+.itemListRight {
+  margin-right: 0.8rem;
+}
+
+.sidebarAddList {
+  width: 100%;
+  height: auto;
+}
+
+.sidebarAddList input {
+  width: 100%;
+  height: 3rem;
+  border: 0;
+  padding-left: 0.55rem;
+  background-color: transparent;
+  color: var(--secondary);
+  font-size: 1rem;
+}
+
+.sidebarAddList input::placeholder {
+  color: var(--secondary);
 }
