@@ -1,16 +1,6 @@
 .mainArea {
-  display: flex;
   width: 100%;
   height: calc(92vh - 1px);
-}
-
-.rightPanel {
-  flex: 0.2;
-  background-color: var(--main);
-  border-left: 1px solid black;
-}
-
-.leftPanel {
-  flex: 0.8;
   background-color: var(--main-light);
+  position: relative;
 }

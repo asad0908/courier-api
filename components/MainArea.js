@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "../styles/MainArea.module.css";
+import Sidebar from "./Sidebar";
 
 const MainArea = () => {
   return (
     <div className={styles.mainArea}>
-      <div className={styles.leftPanel}></div>
-      <div className={styles.rightPanel}></div>
+      <Sidebar />
     </div>
   );
 };

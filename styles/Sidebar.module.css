@@ -1,0 +1,13 @@
+.sidebar {
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-color: var(--main);
+  transition: all 0.2s ease-in;
+}
+
+.sidebarClosed {
+  width: 0%;
+}
