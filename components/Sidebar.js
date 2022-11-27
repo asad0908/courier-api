@@ -9,7 +9,9 @@ const Sidebar = () => {
       className={`${styles.sidebar} ${
         sidebarState ? styles.sidebar : styles.sidebarClosed
       }`}
-    ></div>
+    >
+      <button className={styles.addButton}>Add +</button>
+    </div>
   );
 };
 
