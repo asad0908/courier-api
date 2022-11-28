@@ -3,4 +3,5 @@
   height: calc(92vh - 1px);
   background-color: var(--main-light);
   position: relative;
+  overflow-x: hidden;
 }
