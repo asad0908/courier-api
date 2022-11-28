@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styles from "../styles/Sidebar.module.css";
-import { useSelector } from "react-redux";
 
 const SidebarLists = ({ itemname }) => {
   return (
@@ -12,12 +11,11 @@ const SidebarLists = ({ itemname }) => {
 };
 
 const Sidebar = () => {
-  const sidebarState = useSelector((state) => state.sidebar.value);
   const [addItem, setAddItem] = useState(false);
   return (
     <div
       className={`${styles.sidebar} ${
-        sidebarState ? styles.sidebar : styles.sidebarClosed
+        true ? styles.sidebar : styles.sidebarClosed
       }`}
     >
       <button onClick={() => setAddItem(!addItem)} className={styles.addButton}>
