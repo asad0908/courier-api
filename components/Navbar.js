@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <div className={styles.navbar}>
       <div className={styles.left}>
-        <h3>COURIER API</h3>
+        <h3>COURIER</h3>
       </div>
       <div className={styles.right}>
         {sidebarOpen ? (

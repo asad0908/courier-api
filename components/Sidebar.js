@@ -67,7 +67,12 @@ const Sidebar = ({ isMobileView }) => {
       </button>
       <div className={styles.sidebarLists}>
         {sidebarValues?.map((item) => (
-          <SidebarLists styles={styles} key={item.id} itemval={item} />
+          <SidebarLists
+            isMobileView={isMobileView}
+            styles={styles}
+            key={item.id}
+            itemval={item}
+          />
         ))}
       </div>
       {addItem && (
