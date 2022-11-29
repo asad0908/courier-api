@@ -2,24 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import styles from "../styles/Sidebar.module.css";
 import { useSelector } from "react-redux";
 import { getWithExpiry, setWithExpiry } from "../helpers/localstorageTTL";
-
-const SidebarLists = ({ itemname, id }) => {
-  const deleteItem = () => {
-    const vals = getWithExpiry("sidebarValues");
-    const newVals = vals.filter((item) => item.id != id);
-    setWithExpiry("sidebarValues", newVals, 1000 * 60 * 60);
-    window.dispatchEvent(new Event("storage"));
-  };
-
-  return (
-    <div className={styles.itemlistElement}>
-      <div className={styles.itemListLeft}>{itemname}</div>
-      <div onClick={deleteItem} className={styles.itemListRight}>
-        X
-      </div>
-    </div>
-  );
-};
+import SidebarLists from "./SIdebarLists";
 
 const Sidebar = () => {
   const [sidebarValues, setSidebarValues] = useState([]);
@@ -82,7 +65,7 @@ const Sidebar = () => {
       </button>
       <div className={styles.sidebarLists}>
         {sidebarValues?.map((item) => (
-          <SidebarLists key={item.id} id={item.id} itemname={item.title} />
+          <SidebarLists styles={styles} key={item.id} itemval={item} />
         ))}
       </div>
       {addItem && (
