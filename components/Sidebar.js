@@ -15,7 +15,6 @@ const Sidebar = ({ isMobileView }) => {
     if (val != null) {
       setSidebarValues(val);
     }
-    console.log(isMobileView);
   }, []);
 
   useEffect(() => {
@@ -86,6 +85,5 @@ const Sidebar = ({ isMobileView }) => {
     </div>
   );
 };
-
 
 export default Sidebar;
