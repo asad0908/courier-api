@@ -1,6 +1,8 @@
 import { useDispatch } from "react-redux";
 import { getWithExpiry, setWithExpiry } from "../helpers/localstorageTTL";
 import { setSelectedTab } from "../redux/SelectedTabSlice";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 const SidebarLists = ({ itemval, styles }) => {
   const dispatch = useDispatch();
@@ -21,7 +23,7 @@ const SidebarLists = ({ itemval, styles }) => {
         {itemval.title}
       </div>
       <div onClick={deleteItem} className={styles.itemListRight}>
-        X
+        <FontAwesomeIcon icon={faXmark} />
       </div>
     </div>
   );

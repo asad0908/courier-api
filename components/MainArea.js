@@ -2,10 +2,10 @@ import React from "react";
 import styles from "../styles/MainArea.module.css";
 import Sidebar from "./Sidebar";
 
-const MainArea = () => {
+const MainArea = ({ isMobileView }) => {
   return (
     <div className={styles.mainArea}>
-      <Sidebar />
+      <Sidebar isMobileView={isMobileView} />
     </div>
   );
 };

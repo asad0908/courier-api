@@ -12,3 +12,18 @@
   color: var(--secondary);
   padding-left: 1rem;
 }
+
+.right {
+  padding-right: 1rem;
+}
+
+.burgerIcon {
+  color: var(--secondary);
+  font-size: 1.5rem;
+  transition: all 0.2s ease-in;
+  cursor: pointer;
+}
+
+.burgerIconVisible {
+  opacity: 1;
+}

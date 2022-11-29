@@ -3,8 +3,10 @@ import styles from "../styles/Sidebar.module.css";
 import { useSelector } from "react-redux";
 import { getWithExpiry, setWithExpiry } from "../helpers/localstorageTTL";
 import SidebarLists from "./SIdebarLists";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAdd } from "@fortawesome/free-solid-svg-icons";
 
-const Sidebar = () => {
+const Sidebar = ({ isMobileView }) => {
   const [sidebarValues, setSidebarValues] = useState([]);
   const sidebarValueRef = useRef();
 
@@ -13,6 +15,7 @@ const Sidebar = () => {
     if (val != null) {
       setSidebarValues(val);
     }
+    console.log(isMobileView);
   }, []);
 
   useEffect(() => {
@@ -61,7 +64,7 @@ const Sidebar = () => {
       }`}
     >
       <button onClick={() => setAddItem(!addItem)} className={styles.addButton}>
-        Add +
+        <FontAwesomeIcon className={styles.addButtonIcon} icon={faAdd} />
       </button>
       <div className={styles.sidebarLists}>
         {sidebarValues?.map((item) => (
@@ -83,5 +86,6 @@ const Sidebar = () => {
     </div>
   );
 };
+
 
 export default Sidebar;
