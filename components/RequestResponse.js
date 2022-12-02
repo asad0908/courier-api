@@ -10,8 +10,10 @@ const RequestResponse = () => {
           <option value="GET">GET</option>
           <option value="POST">POST</option>
         </select>
-        <input ref={inputBoxRef} type="text" placeholder="Enter the url" />
-        <button>SEND</button>
+        <div className={styles.inputAreaSeperator}>
+          <input ref={inputBoxRef} type="text" placeholder="Enter the url" />
+          <button>SEND</button>
+        </div>
       </div>
     </div>
   );
