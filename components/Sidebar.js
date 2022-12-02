@@ -33,6 +33,8 @@ const Sidebar = ({ isMobileView }) => {
       title: sidebarValueRef.current.value,
       url: "",
       response: "",
+      method: "GET",
+      body: [],
     };
 
     if (e.key == "Enter") {

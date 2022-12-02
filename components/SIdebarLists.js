@@ -16,7 +16,9 @@ const SidebarLists = ({ itemval, styles, isMobileView }) => {
   };
 
   const selectATab = () => {
-    dispatch(setSelectedTab(itemval));
+    const localObj = getWithExpiry("sidebarValues");
+    const localItem = localObj.find((item) => item.id == itemval.id);
+    dispatch(setSelectedTab(localItem));
     if (isMobileView) {
       dispatch(toggle());
     }
