@@ -7,6 +7,7 @@ import HeadersAndBody from "./HeadersAndBody";
 const RequestResponse = () => {
   const inputBoxRef = useRef();
   const selectedOptionRef = useRef();
+  const headersRef = useRef();
   const selectedTab = useSelector((state) => state.selectedTab.value);
   useEffect(() => {
     if (selectedTab) {
@@ -36,7 +37,7 @@ const RequestResponse = () => {
           <button>SEND</button>
         </div>
       </div>
-      <HeadersAndBody />
+      <HeadersAndBody headersRef={headersRef} />
     </div>
   );
 };

@@ -10,11 +10,22 @@ import { useState } from "react";
 const HEADER = "Headers";
 const BODY = "Body";
 
-const HeadersAndBody = () => {
+const HeadersAndBody = ({ headersRef }) => {
   const [currentSelected, setCurrentSelected] = useState(BODY);
 
   const currentSelector = (val) => {
     setCurrentSelected(val);
+  };
+
+  const testFunction = (e) => {
+    if (e.key == "Tab") {
+      e.preventDefault();
+      headersRef.current.value = headersRef.current.value + "  ";
+    }
+  };
+
+  const clearTextAreaValue = () => {
+    headersRef.current.value = "";
   };
 
   return (
@@ -45,8 +56,17 @@ const HeadersAndBody = () => {
           </div>
         </div>
         <div className={styles.headersTopRight}>
-          <button>Clear</button>
+          <button onClick={clearTextAreaValue}>Clear</button>
         </div>
+      </div>
+      <div className={styles.headerTextAreaContainer}>
+        <textarea
+          rows={10}
+          cols={10}
+          spellCheck={false}
+          onKeyDown={testFunction}
+          ref={headersRef}
+        ></textarea>
       </div>
     </div>
   );
