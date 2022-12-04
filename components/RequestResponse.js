@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import { updateDataLS, updateSelectLS } from "../helpers/updateDataLS";
 import styles from "../styles/RequestResponse.module.css";
+import HeadersAndBody from "./HeadersAndBody";
 
 const RequestResponse = () => {
   const inputBoxRef = useRef();
@@ -35,6 +36,7 @@ const RequestResponse = () => {
           <button>SEND</button>
         </div>
       </div>
+      <HeadersAndBody />
     </div>
   );
 };
