@@ -5,7 +5,7 @@ import {
   faSquareCaretDown,
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
-import { updateHeadersLS } from "../helpers/updateDataLS";
+import { deleteHeadersLS, updateHeadersLS } from "../helpers/updateDataLS";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 
@@ -38,10 +38,6 @@ const HeadersAndBody = ({ headersRef, isMobileView, selectedTab }) => {
     }
   };
 
-  const clearTextAreaValue = () => {
-    headersRef.current.value = "";
-  };
-
   return (
     <div className={styles.headersContainer}>
       <div className={styles.headersTop}>
@@ -70,7 +66,13 @@ const HeadersAndBody = ({ headersRef, isMobileView, selectedTab }) => {
           </div>
         </div>
         <div className={styles.headersTopRight}>
-          <button onClick={clearTextAreaValue}>Clear</button>
+          <button
+            onClick={() =>
+              deleteHeadersLS(currentSelected, selectedTab, dispatch)
+            }
+          >
+            Clear
+          </button>
         </div>
       </div>
       <div className={styles.headerTextAreaContainer}>

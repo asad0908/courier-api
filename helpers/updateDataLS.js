@@ -42,3 +42,18 @@ export const updateHeadersLS = (
   setWithExpiry("sidebarValues", newObj, 1000 * 60 * 60);
   dispatch(setSelectedTab(newObj.find((item) => item.id == selectedTab.id)));
 };
+
+export const deleteHeadersLS = (currentSelected, selectedTab, dispatch) => {
+  const currentObj = getWithExpiry("sidebarValues");
+  const newObj = currentObj.map((item) => {
+    if (item.id == selectedTab.id && currentSelected == "Body") {
+      return { ...item, body: "" };
+    }
+    if (item.id == selectedTab.id && currentSelected == "Headers") {
+      return { ...item, headers: "" };
+    }
+    return item;
+  });
+  setWithExpiry("sidebarValues", newObj, 1000 * 60 * 60);
+  dispatch(setSelectedTab(newObj.find((item) => item.id == selectedTab.id)));
+};
