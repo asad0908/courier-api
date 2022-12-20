@@ -5,17 +5,31 @@ import {
   faSquareCaretDown,
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import { updateHeadersLS } from "../helpers/updateDataLS";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
 
 //constants
 const HEADER = "Headers";
 const BODY = "Body";
 
-const HeadersAndBody = ({ headersRef, isMobileView }) => {
+const HeadersAndBody = ({ headersRef, isMobileView, selectedTab }) => {
   const [currentSelected, setCurrentSelected] = useState(BODY);
+  const dispatch = useDispatch();
 
   const currentSelector = (val) => {
     setCurrentSelected(val);
+    if (val == BODY) {
+      headersRef.current.value = selectedTab.body;
+    }
+    if (val == HEADER) {
+      headersRef.current.value = selectedTab.headers;
+    }
   };
+
+  useEffect(() => {
+    setCurrentSelected(BODY);
+  }, [selectedTab]);
 
   const spaceAdder = (e) => {
     if (e.key == "Tab") {
@@ -66,6 +80,9 @@ const HeadersAndBody = ({ headersRef, isMobileView }) => {
           spellCheck={false}
           onKeyDown={spaceAdder}
           ref={headersRef}
+          onBlur={() =>
+            updateHeadersLS(selectedTab, headersRef, currentSelected, dispatch)
+          }
         ></textarea>
       </div>
     </div>

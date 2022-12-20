@@ -4,7 +4,7 @@ import { updateDataLS, updateSelectLS } from "../helpers/updateDataLS";
 import styles from "../styles/RequestResponse.module.css";
 import HeadersAndBody from "./HeadersAndBody";
 
-const RequestResponse = ({isMobileView}) => {
+const RequestResponse = ({ isMobileView }) => {
   const inputBoxRef = useRef();
   const selectedOptionRef = useRef();
   const headersRef = useRef();
@@ -13,6 +13,7 @@ const RequestResponse = ({isMobileView}) => {
     if (selectedTab) {
       inputBoxRef.current.value = selectedTab.url;
       selectedOptionRef.current.value = selectedTab.method;
+      headersRef.current.value = selectedTab.body;
     }
   }, [selectedTab]);
   return (
@@ -37,7 +38,11 @@ const RequestResponse = ({isMobileView}) => {
           <button>SEND</button>
         </div>
       </div>
-      <HeadersAndBody isMobileView={isMobileView} headersRef={headersRef} />
+      <HeadersAndBody
+        selectedTab={selectedTab}
+        isMobileView={isMobileView}
+        headersRef={headersRef}
+      />
     </div>
   );
 };
