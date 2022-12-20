@@ -10,14 +10,14 @@ import { useState } from "react";
 const HEADER = "Headers";
 const BODY = "Body";
 
-const HeadersAndBody = ({ headersRef }) => {
+const HeadersAndBody = ({ headersRef, isMobileView }) => {
   const [currentSelected, setCurrentSelected] = useState(BODY);
 
   const currentSelector = (val) => {
     setCurrentSelected(val);
   };
 
-  const testFunction = (e) => {
+  const spaceAdder = (e) => {
     if (e.key == "Tab") {
       e.preventDefault();
       headersRef.current.value = headersRef.current.value + "  ";
@@ -40,7 +40,7 @@ const HeadersAndBody = ({ headersRef }) => {
                 : styles.headersTopLeftOne
             }`}
           >
-            <FontAwesomeIcon icon={faSquareCaretDown} />
+            {!isMobileView && <FontAwesomeIcon icon={faSquareCaretDown} />}
             Headers
           </div>
           <div
@@ -51,7 +51,7 @@ const HeadersAndBody = ({ headersRef }) => {
                 : styles.headersTopLeftTwo
             }`}
           >
-            <FontAwesomeIcon icon={faSquareCaretDown} />
+            {!isMobileView && <FontAwesomeIcon icon={faSquareCaretDown} />}
             Body
           </div>
         </div>
@@ -64,7 +64,7 @@ const HeadersAndBody = ({ headersRef }) => {
           rows={10}
           cols={10}
           spellCheck={false}
-          onKeyDown={testFunction}
+          onKeyDown={spaceAdder}
           ref={headersRef}
         ></textarea>
       </div>

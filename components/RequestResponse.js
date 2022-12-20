@@ -4,7 +4,7 @@ import { updateDataLS, updateSelectLS } from "../helpers/updateDataLS";
 import styles from "../styles/RequestResponse.module.css";
 import HeadersAndBody from "./HeadersAndBody";
 
-const RequestResponse = () => {
+const RequestResponse = ({isMobileView}) => {
   const inputBoxRef = useRef();
   const selectedOptionRef = useRef();
   const headersRef = useRef();
@@ -37,7 +37,7 @@ const RequestResponse = () => {
           <button>SEND</button>
         </div>
       </div>
-      <HeadersAndBody headersRef={headersRef} />
+      <HeadersAndBody isMobileView={isMobileView} headersRef={headersRef} />
     </div>
   );
 };

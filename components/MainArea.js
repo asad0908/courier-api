@@ -6,7 +6,7 @@ import Sidebar from "./Sidebar";
 const MainArea = ({ isMobileView }) => {
   return (
     <div className={styles.mainArea}>
-      <RequestResponse />
+      <RequestResponse isMobileView={isMobileView} />
       <Sidebar isMobileView={isMobileView} />
     </div>
   );

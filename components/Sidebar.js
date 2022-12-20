@@ -32,9 +32,9 @@ const Sidebar = ({ isMobileView }) => {
       id: Math.random(),
       title: sidebarValueRef.current.value,
       url: "",
-      response: "",
       method: "GET",
-      body: [],
+      body: "",
+      headers: "",
     };
 
     if (e.key == "Enter") {

@@ -78,3 +78,13 @@
   font-weight: bold;
   padding: 10px;
 }
+
+@media (max-width: 500px) {
+  .headersTopLeft {
+    min-width: 45%;
+    margin-left: 15px;
+  }
+  .headersTopRight button {
+    padding: 8px 20px;
+  }
+}
