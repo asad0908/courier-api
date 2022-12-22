@@ -28,8 +28,13 @@ const HeadersAndBody = ({ headersRef, isMobileView, selectedTab }) => {
   };
 
   useEffect(() => {
-    setCurrentSelected(BODY);
-  }, [selectedTab]);
+    if (currentSelected == BODY) {
+      headersRef.current.value = selectedTab.body;
+    }
+    if (currentSelected == HEADER) {
+      headersRef.current.value = selectedTab.headers;
+    }
+  }, [selectedTab, currentSelected, headersRef]);
 
   const spaceAdder = (e) => {
     if (e.key == "Tab") {

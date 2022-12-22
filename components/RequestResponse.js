@@ -13,7 +13,6 @@ const RequestResponse = ({ isMobileView }) => {
     if (selectedTab) {
       inputBoxRef.current.value = selectedTab.url;
       selectedOptionRef.current.value = selectedTab.method;
-      headersRef.current.value = selectedTab.body;
     }
   }, [selectedTab]);
   return (
