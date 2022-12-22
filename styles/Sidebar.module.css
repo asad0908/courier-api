@@ -44,10 +44,12 @@
 
 .itemListLeft {
   margin-left: 0.5rem;
+  flex: 0.9;
 }
 
 .itemListRight {
   margin-right: 0.8rem;
+  flex: 0.1;
 }
 
 .sidebarAddList {
