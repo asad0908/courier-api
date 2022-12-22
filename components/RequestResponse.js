@@ -10,6 +10,7 @@ const RequestResponse = ({ isMobileView }) => {
   const inputBoxRef = useRef();
   const selectedOptionRef = useRef();
   const headersRef = useRef();
+  const outputBoxRef = useRef();
   const selectedTab = useSelector((state) => state.selectedTab.value);
 
   useEffect(() => {
@@ -38,7 +39,9 @@ const RequestResponse = ({ isMobileView }) => {
             type="text"
             placeholder="Enter the url"
           />
-          <button onClick={() => sendRequest(selectedTab)}>SEND</button>
+          <button onClick={() => sendRequest(selectedTab, outputBoxRef)}>
+            SEND
+          </button>
         </div>
       </div>
       <HeadersAndBody
@@ -46,7 +49,7 @@ const RequestResponse = ({ isMobileView }) => {
         isMobileView={isMobileView}
         headersRef={headersRef}
       />
-      <ResponseSection />
+      <ResponseSection outputBoxRef={outputBoxRef} />
     </div>
   );
 };

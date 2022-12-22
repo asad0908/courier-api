@@ -1,6 +1,6 @@
 import styles from "../styles/ResponseSection.module.css";
 
-const ResponseSection = () => {
+const ResponseSection = ({ outputBoxRef }) => {
   return (
     <div className={styles.responseSectionContainer}>
       <div className={styles.responseSectionDetails}>
@@ -18,6 +18,7 @@ const ResponseSection = () => {
       </div>
       <div className={styles.responseTextAreaContainer}>
         <textarea
+          ref={outputBoxRef}
           disabled={true}
           rows={10}
           cols={10}
