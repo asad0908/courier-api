@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
+import { sendRequest } from "../helpers/sendRequest";
 import { updateDataLS, updateSelectLS } from "../helpers/updateDataLS";
 import styles from "../styles/RequestResponse.module.css";
 import HeadersAndBody from "./HeadersAndBody";
@@ -10,12 +11,14 @@ const RequestResponse = ({ isMobileView }) => {
   const selectedOptionRef = useRef();
   const headersRef = useRef();
   const selectedTab = useSelector((state) => state.selectedTab.value);
+
   useEffect(() => {
     if (selectedTab) {
       inputBoxRef.current.value = selectedTab.url;
       selectedOptionRef.current.value = selectedTab.method;
     }
   }, [selectedTab]);
+
   return (
     <div className={styles.requestResponseBackground}>
       <div className={styles.inputArea}>
@@ -35,7 +38,7 @@ const RequestResponse = ({ isMobileView }) => {
             type="text"
             placeholder="Enter the url"
           />
-          <button>SEND</button>
+          <button onClick={() => sendRequest(selectedTab)}>SEND</button>
         </div>
       </div>
       <HeadersAndBody
