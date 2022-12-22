@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { updateDataLS, updateSelectLS } from "../helpers/updateDataLS";
 import styles from "../styles/RequestResponse.module.css";
 import HeadersAndBody from "./HeadersAndBody";
+import ResponseSection from "./ResponseSection";
 
 const RequestResponse = ({ isMobileView }) => {
   const inputBoxRef = useRef();
@@ -42,6 +43,7 @@ const RequestResponse = ({ isMobileView }) => {
         isMobileView={isMobileView}
         headersRef={headersRef}
       />
+      <ResponseSection />
     </div>
   );
 };

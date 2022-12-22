@@ -1,0 +1,67 @@
+.responseSectionContainer {
+  width: 100%;
+  height: auto;
+  min-height: 4vh;
+  margin-top: 1.5rem;
+}
+
+.responseSectionDetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--secondary);
+}
+
+.responseSectionLeft {
+  margin-left: 10px;
+}
+
+.responseSectionRight {
+  display: flex;
+  margin-right: 10px;
+}
+
+.responseSectionRight p {
+  margin-left: 20px;
+}
+
+.responseSectionRight p span {
+  color: var(--tertiary);
+  font-weight: bold;
+}
+
+.responseTextAreaContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  min-height: 20vh;
+  margin-top: 20px;
+}
+
+.responseTextAreaContainer textarea {
+  width: 98%;
+  height: 100%;
+  min-height: 35vh;
+  resize: none;
+  background-color: var(--main);
+  color: var(--tertiary);
+  font-weight: bold;
+  padding: 10px;
+}
+
+@media (max-width: 500px) {
+  .responseSectionLeft p {
+    font-size: 0.9rem;
+  }
+  .responseSectionRight p {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .responseSectionContainer {
+    margin-top: 3rem;
+  }
+}
