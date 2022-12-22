@@ -2,7 +2,7 @@
   width: 100%;
   height: auto;
   min-height: 4vh;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 
 .responseSectionDetails {
@@ -58,10 +58,13 @@
   .responseSectionRight p {
     font-size: 0.7rem;
   }
+  .responseSectionContainer {
+    margin-bottom: 1.5rem;
+  }
 }
 
 @media (max-width: 400px) {
   .responseSectionContainer {
-    margin-top: 3rem;
+    margin-bottom: 2rem;
   }
 }

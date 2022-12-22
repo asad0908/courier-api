@@ -1,6 +1,7 @@
 .mainArea {
   width: 100%;
-  height: calc(92vh - 1px);
+  min-height: calc(92vh - 1px);
+  height: auto;
   background-color: var(--main-light);
   position: relative;
   overflow-x: hidden;

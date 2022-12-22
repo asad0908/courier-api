@@ -8,7 +8,7 @@
 
 .inputArea {
   width: 100%;
-  height: 7%;
+  height: 2.5rem;
   margin-top: 1rem;
   display: flex;
   flex-direction: row;
@@ -84,7 +84,7 @@
 @media (max-width: 500px) {
   .inputArea {
     flex-direction: column;
-    height: 15%;
+    height: 5rem;
   }
   .inputArea select {
     width: 100%;
