@@ -1,6 +1,6 @@
 import styles from "../styles/ResponseSection.module.css";
 
-const ResponseSection = ({ outputBoxRef }) => {
+const ResponseSection = ({ outputBoxRef, responseData }) => {
   return (
     <div className={styles.responseSectionContainer}>
       <div className={styles.responseSectionDetails}>
@@ -9,10 +9,10 @@ const ResponseSection = ({ outputBoxRef }) => {
         </div>
         <div className={styles.responseSectionRight}>
           <p>
-            Status: <span>200</span>
+            Status: <span>{responseData[0]}</span>
           </p>
           <p>
-            Time: <span>400ms</span>
+            Time: <span>{responseData[1]}{responseData[1] !== "N/A" && "ms"}</span>
           </p>
         </div>
       </div>

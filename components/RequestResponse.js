@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { sendRequest } from "../helpers/sendRequest";
 import { updateDataLS, updateSelectLS } from "../helpers/updateDataLS";
@@ -11,13 +11,16 @@ const RequestResponse = ({ isMobileView }) => {
   const selectedOptionRef = useRef();
   const headersRef = useRef();
   const outputBoxRef = useRef();
+  const [responseData, setResponseData] = useState(["N/A", "N/A"]);
   const selectedTab = useSelector((state) => state.selectedTab.value);
 
   useEffect(() => {
     if (selectedTab) {
       inputBoxRef.current.value = selectedTab.url;
       selectedOptionRef.current.value = selectedTab.method;
+      outputBoxRef.current.value = "";
     }
+    setResponseData(["N/A", "N/A"]);
   }, [selectedTab]);
 
   return (
@@ -39,7 +42,11 @@ const RequestResponse = ({ isMobileView }) => {
             type="text"
             placeholder="Enter the url"
           />
-          <button onClick={() => sendRequest(selectedTab, outputBoxRef)}>
+          <button
+            onClick={() =>
+              sendRequest(selectedTab, outputBoxRef, setResponseData)
+            }
+          >
             SEND
           </button>
         </div>
@@ -49,7 +56,10 @@ const RequestResponse = ({ isMobileView }) => {
         isMobileView={isMobileView}
         headersRef={headersRef}
       />
-      <ResponseSection outputBoxRef={outputBoxRef} />
+      <ResponseSection
+        responseData={responseData}
+        outputBoxRef={outputBoxRef}
+      />
     </div>
   );
 };
